@@ -17,13 +17,13 @@ public class MovementWatcher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        moveOneByOne.MoveNextObject();
+        // moveOneByOne.MoveNextObject();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnEnable()
@@ -33,7 +33,8 @@ public class MovementWatcher : MonoBehaviour
 
     void OnDisable()
     {
-
+        // Moved it here because each cube gets disabled when it moves to the end point, telling the next cube to go
+        moveOneByOne.MoveNextObject();
     }
     void OnApplicationQuit()
     {
